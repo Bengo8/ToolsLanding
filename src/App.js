@@ -15,6 +15,8 @@ import { RegisterComponent } from "./components/RegisterComponent";
 import UsersService from "./services/UsersService";
 import { ProfileComponent } from "./components/ProfileComponent";
 
+import modules from '../src/modules';
+
 const _userService = new UsersService();
 function App() {
   const [currentUser, setCurrentUser] = useState(_userService.getCurrentUser());
@@ -38,6 +40,11 @@ function App() {
         <Routes>
           <Route path='/profile' element={<ProfileComponent currentUser={currentUser} onLogOut={() => setCurrentUser(null)} />} />
         </Routes>
+        {modules.filter(module => module.routeProps.type === 'toolModule').map(module => (
+          <Routes>
+            <Route path={module.routeProps.path} element={<module.routeProps.component />} key={module.name} />
+          </Routes>
+        ))}
         <FooterComponent></FooterComponent>
       </Router>
     </>

@@ -34,9 +34,10 @@ export const HomeComponent = ({ currentUser }) => {
         <>
 
             <main className="px-3">
-                <h1>Herramientas Útiles</h1>
-                <p className="lead">Herramientas útiles para el día a día.</p><br />
+            <h1>Herramientas Útiles</h1>
+                <p className="lead">Herramientas útiles para el día a día.</p>
                 <p className="lead">
+                <img src="./icontools.png" style={{ witdh:80, height:80 }} /><br /><br />
                     {/* <Link to="/tools"><a href="#" className="btn btn-lg btn-secondary fw-bold border-white bg-white">Ver Herramientas</a></Link> */}
                     <a onClick={NavigateToTools} className="btn btn-lg btn-secondary fw-bold border-white bg-white">Ver Herramientas</a>
                 </p>

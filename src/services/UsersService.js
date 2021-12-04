@@ -26,7 +26,7 @@ export default class UsersService {
     login = (userName, pass) => {
         const data = { userName: userName, passWord: pass };
         return new Promise((resolve, reject) => {
-            fetch('http://localhost:3000/login/' + data.userName + '/' + data.passWord, { method: 'GET' })
+            fetch('http://api.apuntesdeprogramacion.com/api/login/' + data.userName + '/' + data.passWord, { method: 'GET' })
                 .then((response) => {
                     let json = response.json();
                     if (json !== null && json !== undefined) {
@@ -45,7 +45,7 @@ export default class UsersService {
     logisn = (userName, pass, data2) => {
         const data = { userName: userName, passWord: pass };
         return new Promise((resolve, reject) => {
-            fetch('http://localhost:3000/login/' + data.userName + '/' + data.passWord + '/' + data2, {
+            fetch('http://api.apuntesdeprogramacion.com/api/login/' + data.userName + '/' + data.passWord + '/' + data2, {
                 method: 'POST', headers: {
                     'Content-Type': 'application/json',
                     'X-Api-IP': '12345'
@@ -70,7 +70,7 @@ export default class UsersService {
     register = (email, userName, pass) => {
         const data = { email: email, userName: userName, passWord: pass };
         return new Promise((resolve, reject) => {
-            fetch('http://localhost:3000/register/' + data.email + '/' + data.userName + '/' + data.passWord, { method: 'GET' })
+            fetch('http://api.apuntesdeprogramacion.com/api/register/' + data.email + '/' + data.userName + '/' + data.passWord, { method: 'GET' })
                 .then((response) => {
                     let json = response.json();
                     if (json !== null && json !== undefined) {
@@ -94,7 +94,7 @@ export default class UsersService {
 
     getUserData = (userName) => {
         return new Promise((resolve, reject) => {
-            fetch('http://localhost:3000/login')
+            fetch('http://api.apuntesdeprogramacion.com/api/login')
                 .then((response) => {
                     let json = response.json();
                     resolve(json);
@@ -108,7 +108,7 @@ export default class UsersService {
 
     getAllUsersData = () => {
         return new Promise((resolve, reject) => {
-            fetch('http://localhost:3000/users')
+            fetch('http://api.apuntesdeprogramacion.com/api/users')
                 .then((response) => {
                     let json = response.json();
                     resolve(json);
