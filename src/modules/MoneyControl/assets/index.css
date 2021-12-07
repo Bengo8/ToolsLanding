@@ -1,0 +1,198 @@
+.tool-moneyControl {
+  width: 100%;
+  margin: 30px auto;
+  box-shadow: 0 18px 20px 9px black;
+  padding: 30px;
+  border-radius: 5px;
+  margin-top: -35%;
+  height: 700px;
+}
+
+.tool-moneyControl-container {
+  font-family: "Courier New", Courier, monospace;
+  /* font-family:'Times New Roman', Times, serif */
+}
+
+.yourMoneyContainer {
+}
+
+.MoneyContainerInfo {
+  /* border-style: groove;
+    height: auto; */
+}
+
+.noVisible {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 2.5s linear;
+}
+
+.yesVisible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.MoneyContainerTxt {
+  /* border-style: groove;
+    height: auto; */
+  width: 50%;
+  margin-left: 27%;
+}
+
+.MoneyContainerMoney {
+  border-style: groove;
+  height: auto;
+  width: 241px;
+  padding: 10px;
+  margin-left: 30%;
+  color: rgb(167 174 255);
+}
+
+.yourMonthContainer {
+  margin-top: -12px;
+}
+
+.MonthContainerInfo {
+  /* margin-bottom: 3px; */
+}
+
+.MonthContainerTxt {
+  width: 75%;
+  margin-left: 18%;
+}
+
+.MonthContainerMoney {
+  border-style: groove;
+  height: auto;
+
+  min-width: 243px;
+  max-width: 300px;
+  padding: 10px;
+  margin-left: 27%;
+  color: rgb(167 174 255);
+}
+
+.signoMoney {
+  color: green;
+  font-size: 44px;
+}
+
+.yourBalanceContainer {
+  display: inline-flex;
+}
+
+.BalanceContainerInfoMinus {
+  margin-left: -2%;
+  margin-right: 9%;
+}
+
+.BalanceContainerTxtMinus {
+  text-decoration: underline rgb(251 88 88);
+  text-decoration-thickness: 2px;
+  color: rgb(251 88 88);
+}
+
+.BalanceContainerMoneyMinus {
+  color: red;
+  border-style: groove;
+  padding: 10px;
+  min-width: 243px;
+}
+
+.BalanceContainerInfoPlus {
+  /* margin-left: 3%; */
+}
+
+.BalanceContainerTxtPlus {
+  text-decoration: underline rgb(163 253 134);
+  text-decoration-thickness: 2px;
+  color: rgb(163 253 134);
+}
+
+.BalanceContainerMoneyPlus {
+  color: green;
+  padding: 10px;
+  border-style: groove;
+  min-width: 243px;
+}
+
+.dot {
+  --c: rgb(253 0 241); /* color */
+  --r: 6px; /* circle size */
+  --s: 10px; /* space bettwen circles */
+
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  margin: 5px;
+  position: relative;
+  --g: radial-gradient(circle closest-side, var(--c) 85%, transparent);
+  background: var(--g) calc(var(--s) / -2) 0 / calc(var(--r) + var(--s))
+      var(--r) repeat-x,
+    var(--g) 0 calc(var(--s) / -2) / var(--r) calc(var(--r) + var(--s)) repeat-y;
+}
+
+.dots::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--r) / 2);
+  left: 100%;
+  width: 20px;
+  height: 20px;
+  transform: translateY(-50%);
+  background: var(--c);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+.dotVertical {
+  transform: scaleY(-1);
+  width: 15px;
+  height: 0px;
+}
+
+.dotRotatesDiv {
+  margin-top: -27px;
+  margin-bottom: -8px;
+  padding-top: 30px;
+  height: 31px;
+  overflow: hidden;
+}
+
+.dotRotateToLeft {
+  transform: rotate(-45deg);
+  height: 15px;
+  margin-right: -43px;
+}
+
+.dotRotateToRigth {
+  transform: rotate(45deg);
+  height: 15px;
+  width: 105px;
+}
+
+.dot1 {
+  transform: scaleY(-1);
+  --c: green;
+  width: 150px;
+  --r: 5px;
+}
+
+.dot2 {
+  transform: scaleX(-1);
+  --c: orange;
+  height: 50px;
+  --s: 15px;
+}
+
+.dot3 {
+  transform: scale(-1);
+  --c: blue;
+  width: 80px;
+  --s: 5px;
+}
+
+.addMovement {
+  width: 349px !important;
+  margin-top: 45px;
+  margin-bottom: 10px;
+}
