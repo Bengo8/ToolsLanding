@@ -47,15 +47,28 @@ body {
 
 @media (max-width: 615px) {
   .small-auto {
-    margin-bottom: 220px !important;
-  }
-}
-
-@media (max-width: 615px) {
-  .small-auto {
     margin-bottom: 212px !important;
   }
 }
+
+@media (max-width: 550px) {
+  .small-auto {
+    margin-bottom: 189px !important;
+  }
+}
+
+@media (max-width: 485px) {
+  .small-auto {
+    margin-bottom: 168px !important;
+  }
+}
+
+@media (max-width: 398px) {
+  .small-auto {
+    margin-bottom: 137px !important;
+  }
+}
+
 
 .nav-masthead .nav-link {
   padding: 0.25rem 0;
