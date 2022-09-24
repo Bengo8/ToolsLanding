@@ -23,10 +23,10 @@ export default class UsersService {
         this._setUserData(userData, updateCache);
     }
 
-    login = (userName, pass) => {
+    loginRewal = (userName, pass) => {
         const data = { userName: userName, passWord: pass };
         return new Promise((resolve, reject) => {
-            fetch('http://api.apuntesdeprogramacion.com/api/login/' + data.userName + '/' + data.passWord, { method: 'GET' })
+            fetch(this._settings.api + '/login/' + data.userName + '/' + data.passWord, { method: 'GET' })
                 .then((response) => {
                     let json = response.json();
                     if (json !== null && json !== undefined) {
@@ -42,14 +42,14 @@ export default class UsersService {
         })
     }
 
-    logisn = (userName, pass, data2) => {
+    login = (userName, pass, data2) => {
         const data = { userName: userName, passWord: pass };
         return new Promise((resolve, reject) => {
-            fetch('http://api.apuntesdeprogramacion.com/api/login/' + data.userName + '/' + data.passWord + '/' + data2, {
+            fetch(this._settings.api + '/login/' + data.userName + '/' + data.passWord + '/' + data2, {
                 method: 'POST', headers: {
                     'Content-Type': 'application/json',
-                    'X-Api-IP': '12345'
-                    // 'Content-Type': 'application/x-www-form-urlencoded',
+                    'X-Api-IP': '12345',
+                    'authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvcmlnaW4iOiJodHRwOi8vbG9jYWxob3N0OjMwMDAvIiwiaXBPcmlnaW4iOiIxOTIuMTY4LjAuMjEiLCJzZWNyZXRLZXkiOiIxMjM0IiwiaWF0IjoxNjUzMTUwNDg5LCJleHAiOjE2NTMxNjg0ODl9.X9U4Qqn_nPNKtZ27x1FR3kY-u-GIUWxjntjfOM9jz9M',
                 }
             })
                 .then((response) => {
@@ -70,7 +70,7 @@ export default class UsersService {
     register = (email, userName, pass) => {
         const data = { email: email, userName: userName, passWord: pass };
         return new Promise((resolve, reject) => {
-            fetch('http://api.apuntesdeprogramacion.com/api/register/' + data.email + '/' + data.userName + '/' + data.passWord, { method: 'GET' })
+            fetch(this._settings.api + '/register/' + data.email + '/' + data.userName + '/' + data.passWord, { method: 'GET' })
                 .then((response) => {
                     let json = response.json();
                     if (json !== null && json !== undefined) {
@@ -94,7 +94,7 @@ export default class UsersService {
 
     getUserData = (userName) => {
         return new Promise((resolve, reject) => {
-            fetch('http://api.apuntesdeprogramacion.com/api/login')
+            fetch(this._settings.api + '/login')
                 .then((response) => {
                     let json = response.json();
                     resolve(json);
@@ -108,7 +108,7 @@ export default class UsersService {
 
     getAllUsersData = () => {
         return new Promise((resolve, reject) => {
-            fetch('http://api.apuntesdeprogramacion.com/api/users')
+            fetch(this._settings.api + '/users')
                 .then((response) => {
                     let json = response.json();
                     resolve(json);
